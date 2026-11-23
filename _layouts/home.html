@@ -5,8 +5,8 @@ layout: default
 {% assign featured = site.posts | where: "featured", true | first | default: site.posts.first %}
 
 <section class="wrap hero">
-  <p class="kicker">{{ site.tagline }}</p>
-  <h1 class="masthead">{{ site.title }}</h1>
+  <p class="kicker">{{ home.hero.kicker | default: site.tagline }}</p>
+  <h1 class="masthead">{{ home.hero.title | default: site.title }}</h1>
 </section>
 
 {% if featured %}
