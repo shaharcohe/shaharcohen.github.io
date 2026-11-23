@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="wrap post">
+  <header class="post-header">
+    <div class="byline">{% include avatar.html %}<div><span>{{ site.author }}</span><small>{{ page.date | date: "%b %-d, %Y" }} &middot; {% include read-time.html content=content %}</small></div></div>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+  </header>
+
+  {% if page.image %}
+    <figure class="cover"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: '' }}"></figure>
+  {% endif %}
+
+  {% include prose.html content=content %}
+
+  {% if page.tags.size > 0 %}
+    <ul class="tags">{% for tag in page.tags %}<li>#{{ tag }}</li>{% endfor %}</ul>
+  {% endif %}
+
+  {% if page.previous or page.next %}
+    <nav class="post-nav" aria-label="More posts">
+      {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}"><small>Previous</small>{{ page.previous.title }}</a>{% endif %}
+      {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}"><small>Next</small>{{ page.next.title }}</a>{% endif %}
+    </nav>
+  {% endif %}
+</article>

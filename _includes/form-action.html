@@ -1,0 +1,1 @@
+{% if site.formspree_id %}action="https://formspree.io/f/{{ site.formspree_id }}" method="POST"{% else %}action="#" onsubmit="alert('This form is not connected yet.'); return false;"{% endif %}

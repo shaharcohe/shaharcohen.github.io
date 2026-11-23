@@ -1,0 +1,4 @@
+{% capture fixed_src %}src="{{ site.baseurl }}/assets/{% endcapture %}{% capture fixed_href %}href="{{ site.baseurl }}/assets/{% endcapture %}
+<div class="prose">
+  {{ include.content | replace: 'src="/assets/', fixed_src | replace: 'href="/assets/', fixed_href }}
+</div>

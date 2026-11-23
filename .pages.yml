@@ -1,0 +1,61 @@
+media:
+  input: assets/images
+  output: /assets/images
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date }
+      - { name: description, label: Short description, type: text }
+      - { name: image, label: Cover image, type: image }
+      - { name: featured, label: Featured on home page, type: boolean }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: body, label: Body, type: rich-text }
+  - name: about
+    label: About page
+    type: file
+    path: about.md
+    fields:
+      - { name: title, label: Title, type: string }
+      - { name: body, label: Body, type: rich-text }
+  - name: home
+    label: Home page text
+    type: file
+    path: _data/home.yml
+    format: yaml
+    fields:
+      - name: newsletter
+        label: Newsletter
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+      - { name: latest_title, label: Latest posts title, type: string }
+      - name: about
+        label: About me
+        type: object
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: text, label: Text, type: text }
+      - name: pick
+        label: Pick of the month
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: subtitle, label: Subtitle, type: string }
+          - { name: text, label: Text, type: text }
+          - { name: image, label: Image, type: image }
+          - { name: link, label: Link, type: string }
+      - name: contact
+        label: Contact
+        type: object
+        fields:
+          - { name: title, label: Title line 1, type: string }
+          - { name: subtitle, label: Title line 2, type: string }

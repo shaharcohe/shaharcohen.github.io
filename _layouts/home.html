@@ -1,0 +1,88 @@
+---
+layout: default
+---
+{% assign home = site.data.home %}
+{% assign featured = site.posts | where: "featured", true | first | default: site.posts.first %}
+
+<section class="wrap hero">
+  <p class="kicker">{{ site.tagline }}</p>
+  <h1 class="masthead">{{ site.title }}</h1>
+</section>
+
+{% if featured %}
+<section class="wrap featured">
+  <article class="featured-card">
+    <span class="badge">Featured post</span>
+    <a class="card-media" href="{{ featured.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      {% if featured.image %}<img src="{{ featured.image | relative_url }}" alt="">{% else %}<span class="placeholder">{{ featured.title | slice: 0 }}</span>{% endif %}
+    </a>
+    <div class="card-body">
+      <p class="meta">{{ featured.date | date: "%b %-d" }} &middot; {% include read-time.html content=featured.content %}</p>
+      <h2><a href="{{ featured.url | relative_url }}">{{ featured.title }}</a></h2>
+      <p class="excerpt">{{ featured.description | default: featured.excerpt | strip_html | truncatewords: 60 }}</p>
+    </div>
+  </article>
+</section>
+{% endif %}
+
+<section class="wrap band newsletter" id="subscribe">
+  <div>
+    <h2 class="section-title">{{ home.newsletter.title }}</h2>
+    <p class="small">{{ home.newsletter.text }}</p>
+  </div>
+  <form class="nl-form" {% include form-action.html %}>
+    <input type="hidden" name="_subject" value="New subscriber">
+    <label class="field"><span>Email *</span><input type="email" name="email" required autocomplete="email"></label>
+    <label class="check"><input type="checkbox" name="subscribe" required> <span>Yes, subscribe me to your newsletter. *</span></label>
+    <button class="pill" type="submit">Subscribe</button>
+  </form>
+</section>
+
+{% assign latest = site.posts | where_exp: "p", "p.url != featured.url" %}
+{% if latest.size > 0 %}
+<section class="wrap latest">
+  <h2 class="section-title center">{{ home.latest_title }}</h2>
+  <div class="cards">
+    {% for post in latest limit: 3 %}{% include post-card.html %}{% endfor %}
+  </div>
+  <p class="center"><a class="pill" href="{{ '/blog/' | relative_url }}">All Posts</a></p>
+</section>
+{% endif %}
+
+<section class="wrap band about">
+  <div class="about-photo">
+    {% if site.author_image %}<img src="{{ site.author_image | relative_url }}" alt="{{ site.author }}">{% else %}<span class="placeholder">{{ site.author | slice: 0 }}</span>{% endif %}
+  </div>
+  <div>
+    <p class="label">{{ home.about.label }}</p>
+    <p class="about-text">{{ home.about.text }}</p>
+    <a class="pill" href="{{ '/about/' | relative_url }}">Read More</a>
+  </div>
+</section>
+
+{% if home.pick.image and home.pick.image != "" %}
+<section class="wrap band pick">
+  <div class="pick-text">
+    <div>
+      <h2 class="section-title">{{ home.pick.title }}</h2>
+      {% if home.pick.subtitle != "" %}<p class="small">{{ home.pick.subtitle }}</p>{% endif %}
+    </div>
+    {% if home.pick.text != "" %}<p class="small">{{ home.pick.text }}</p>{% endif %}
+  </div>
+  {% if home.pick.link != "" %}<a class="pick-image" href="{{ home.pick.link }}">{% else %}<div class="pick-image">{% endif %}
+    <img src="{{ home.pick.image | relative_url }}" alt="{{ home.pick.subtitle }}" loading="lazy">
+  {% if home.pick.link != "" %}</a>{% else %}</div>{% endif %}
+</section>
+{% endif %}
+
+<section class="wrap band contact" id="contact">
+  <h2 class="section-title center">{{ home.contact.title }}<br>{{ home.contact.subtitle }}</h2>
+  <form class="contact-form" {% include form-action.html %}>
+    <input type="hidden" name="_subject" value="New message from your blog">
+    <label class="field"><span>First name *</span><input name="first_name" required autocomplete="given-name"></label>
+    <label class="field"><span>Last name *</span><input name="last_name" required autocomplete="family-name"></label>
+    <label class="field wide"><span>Email *</span><input type="email" name="email" required autocomplete="email"></label>
+    <label class="field wide"><span>Message</span><textarea name="message" rows="3"></textarea></label>
+    <button class="pill dark" type="submit">Submit</button>
+  </form>
+</section>
