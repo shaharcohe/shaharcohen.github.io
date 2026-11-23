@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="eyebrow">Hello, I'm</p>
+  <h1>{{ site.author }}</h1>
+  <p class="lede">{{ site.tagline }}</p>
+  {% if content != "" %}<div class="hero-extra">{{ content }}</div>{% endif %}
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Latest writing</h2>
+    <span>{{ site.posts | size }} {% if site.posts.size == 1 %}post{% else %}posts{% endif %}</span>
+  </div>
+  {% if site.posts.size > 0 %}
+    <div class="grid">
+      {% for post in site.posts %}{% include post-card.html %}{% endfor %}
+    </div>
+  {% else %}
+    <p class="empty">No posts yet.</p>
+  {% endif %}
+</section>

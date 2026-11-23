@@ -1,3 +1,25 @@
 title: Shahar Cohen
+author: Shahar Cohen
 description: My blog
-theme: minima
+tagline: Notes, stories and photos.
+lang: en
+
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - README.md
