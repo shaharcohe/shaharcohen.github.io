@@ -1,4 +1,4 @@
-{% assign hidden = site.data.settings.site_hidden %}<!doctype html>
+{% assign hidden = site.data.settings.site_hidden %}{% assign design = site.data.settings.design | default: "classic" %}<!doctype html>
 <html lang="{{ site.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
@@ -15,14 +15,14 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
 </head>
-<body>
+<body class="design-{{ design }}">
 {% if hidden %}
   <main class="unavailable">
     <h1 class="masthead">{{ site.data.home.hero.title | default: site.title }}</h1>
     <p>{{ site.data.settings.hidden_message | default: "This page is currently unavailable." }}</p>
   </main>
 {% else %}
-  {% include header.html %}
+  {% if design == "split" %}{% include header-split.html %}{% else %}{% include header.html %}{% endif %}
   <main>
     {{ content }}
   </main>

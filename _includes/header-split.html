@@ -1,0 +1,10 @@
+{% assign blog_active = false %}{% if page.url == '/blog/' or page.layout == 'post' %}{% assign blog_active = true %}{% endif %}
+<header class="topbar">
+  <nav class="topbar-nav" aria-label="Main">
+    <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
+    <a href="{{ '/blog/' | relative_url }}"{% if blog_active %} aria-current="page"{% endif %}>Blog</a>
+    <a href="{{ '/photos/' | relative_url }}"{% if page.url == '/photos/' %} aria-current="page"{% endif %}>Photos</a>
+  </nav>
+  <a class="topbar-title" href="{{ '/' | relative_url }}">{{ site.data.home.hero.title | default: site.title }}</a>
+  <div class="topbar-right"><a class="outline-btn" href="{{ '/blog/' | relative_url }}">All Posts</a></div>
+</header>

@@ -9,3 +9,8 @@ pick:
   title: My pick of the month
   subtitle: check
   text: check
+split:
+  headline: Big science in small bites
+  ticker: Notes, stories and photos
+  button: Read Latest
+  categories_label: Categories
