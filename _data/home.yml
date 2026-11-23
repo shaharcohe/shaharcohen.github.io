@@ -1,16 +1,16 @@
 hero:
   kicker: Notes, stories and photos.
-  title: Science Bites
+  title: Train of Thoughts
 latest_title: Latest Thoughts
 about:
   label: About me
   text: Replace this with a few sentences about yourself.
-pick:
-  title: My pick of the month
-  subtitle: check
-  text: check
 split:
   headline: Big science in small bites
   ticker: Notes, stories and photos
   button: Read Latest
   categories_label: Categories
+pick:
+  title: My pick of the month
+  subtitle: check
+  text: check
