@@ -76,7 +76,7 @@ button, input, textarea { font: inherit; color: inherit; }
 
 /* ---------- Hero ---------- */
 .hero { padding-top: 26px; padding-bottom: 30px; text-align: center; }
-.masthead { font-weight: 900; font-size: clamp(2.8rem, 8.6vw, 5.6rem); letter-spacing: -0.03em; line-height: 1; font-variation-settings: "SOFT" 100, "WONK" 0; }
+.masthead { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: clamp(2.6rem, 8vw, 5.2rem); letter-spacing: -0.02em; line-height: 1; }
 
 /* ---------- Featured ---------- */
 .featured { padding-top: 14px; padding-bottom: 72px; }
