@@ -230,3 +230,7 @@ button, input, textarea { font: inherit; color: inherit; }
   .cards { grid-template-columns: 1fr; }
   .featured { padding-bottom: 48px; }
 }
+
+/* ---------- Site hidden ("currently unavailable") ---------- */
+.unavailable { display: grid; place-content: center; gap: clamp(18px, 2vw, 36px); min-height: 100vh; padding: 0 var(--gutter); text-align: center; }
+.unavailable p { margin: 0 auto; padding-top: clamp(18px, 2vw, 36px); border-top: 1px solid var(--line); font-size: clamp(0.85rem, 1.4vw, 1.6rem); letter-spacing: 0.14em; text-transform: uppercase; }

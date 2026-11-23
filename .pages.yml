@@ -54,3 +54,11 @@ content:
           - { name: text, label: Text, type: text }
           - { name: image, label: Image, type: image }
           - { name: link, label: Link, type: string }
+  - name: settings
+    label: Site settings
+    type: file
+    path: _data/settings.yml
+    format: yaml
+    fields:
+      - { name: site_hidden, label: Hide the whole site (visitors see only the message below), type: boolean }
+      - { name: hidden_message, label: Message shown while the site is hidden, type: string }
