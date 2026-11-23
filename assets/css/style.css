@@ -54,7 +54,7 @@ button, input, textarea { font: inherit; color: inherit; }
 .site-header { padding-top: 10px; }
 .header-bar {
   display: grid;
-  grid-template-columns: 110px 1fr auto 1fr 120px;
+  grid-template-columns: 120px 1fr auto 1fr 120px;
   padding: 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -62,8 +62,6 @@ button, input, textarea { font: inherit; color: inherit; }
 }
 .cell { display: flex; align-items: center; justify-content: center; min-height: 34px; border-left: 1px solid var(--line); }
 .header-bar > .cell:first-child { border-left: 0; }
-.logo { text-decoration: none; }
-.logo-mark { font-family: var(--display); font-weight: 900; font-size: 1.25rem; letter-spacing: -0.02em; line-height: 1; }
 .nav { display: flex; }
 .nav .cell { padding: 0 18px; font-size: 0.8rem; text-decoration: none; }
 .nav .cell:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -201,14 +199,13 @@ main > .band:last-child { border-bottom: 0; }
 .site-footer { border-top: 1px solid var(--line); }
 .footer-grid {
   display: grid;
-  grid-template-columns: 140px 1fr 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr auto 1fr;
   gap: 24px;
   align-items: start;
   padding-top: 22px;
   padding-bottom: 32px;
   font-size: 0.75rem;
 }
-.site-footer .logo-mark { font-size: 1.9rem; }
 .footer-links { margin: 0; padding: 0; list-style: none; line-height: 1.75; }
 .footer-links a { text-decoration: none; }
 .footer-links a:hover { text-decoration: underline; color: var(--accent); }
@@ -218,14 +215,13 @@ main > .band:last-child { border-bottom: 0; }
 @media (max-width: 860px) {
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid .logo { grid-column: 1 / -1; }
   .copyright { text-align: left; }
 }
 @media (max-width: 720px) {
-  .header-bar { grid-template-columns: auto 1fr; }
+  .header-bar { grid-template-columns: 1fr; }
   .header-bar .spacer, .header-bar .social-cell { display: none; }
-  .header-bar .logo { padding: 0 14px; }
-  .nav { justify-content: flex-end; }
+  .nav { justify-content: center; }
+  .nav .cell:first-child { border-left: 0; }
   .nav .cell { padding: 0 10px; }
   .about, .pick { grid-template-columns: 1fr; gap: 24px; }
   .about-photo { max-width: 160px; }
@@ -233,7 +229,6 @@ main > .band:last-child { border-bottom: 0; }
 @media (max-width: 520px) {
   .wrap { padding-left: 16px; padding-right: 16px; }
   .header-bar { padding: 0; }
-  .header-bar .logo { padding: 0 10px; }
   .nav .cell { padding: 0 7px; font-size: 0.74rem; }
   .cards { grid-template-columns: 1fr; }
   .featured { padding-bottom: 48px; }
