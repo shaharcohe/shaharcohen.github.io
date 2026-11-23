@@ -1,8 +1,4 @@
 # Text for the sections on the home page. Edit freely.
-newsletter:
-  title: Never miss a new post.
-  text: Get an email when something new goes up. Thoughtful writing and fresh ideas, straight to your inbox.
-
 latest_title: Latest Thoughts
 
 about:
@@ -16,7 +12,3 @@ pick:
   text: ""
   image: ""
   link: ""
-
-contact:
-  title: Drop me a line,
-  subtitle: let me know what you think

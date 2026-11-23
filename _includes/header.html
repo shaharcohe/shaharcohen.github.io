@@ -8,7 +8,6 @@
       <a class="cell" href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
       <a class="cell" href="{{ '/blog/' | relative_url }}"{% if blog_active %} aria-current="page"{% endif %}>Blog</a>
       <a class="cell" href="{{ '/photos/' | relative_url }}"{% if page.url == '/photos/' %} aria-current="page"{% endif %}>Photos</a>
-      <a class="cell" href="{{ '/#contact' | relative_url }}">Contact</a>
     </nav>
     <span class="cell spacer" aria-hidden="true"></span>
     <div class="cell social-cell">{% include social.html %}</div>
