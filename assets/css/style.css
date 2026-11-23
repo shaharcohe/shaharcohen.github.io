@@ -49,14 +49,12 @@ button, input, textarea { font: inherit; color: inherit; }
   transition: background .15s;
 }
 .pill:hover { background: var(--accent-hover); }
-.pill.dark { background: #000; }
-.pill.dark:hover { background: #333; }
 
 /* ---------- Header ---------- */
 .site-header { padding-top: 10px; }
 .header-bar {
   display: grid;
-  grid-template-columns: 110px 1fr auto 1fr 120px;
+  grid-template-columns: 120px 1fr auto 1fr 120px;
   padding: 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -64,8 +62,6 @@ button, input, textarea { font: inherit; color: inherit; }
 }
 .cell { display: flex; align-items: center; justify-content: center; min-height: 34px; border-left: 1px solid var(--line); }
 .header-bar > .cell:first-child { border-left: 0; }
-.logo { text-decoration: none; }
-.logo-mark { font-family: var(--display); font-weight: 900; font-size: 1.25rem; letter-spacing: -0.02em; line-height: 1; }
 .nav { display: flex; }
 .nav .cell { padding: 0 18px; font-size: 0.8rem; text-decoration: none; }
 .nav .cell:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -78,7 +74,7 @@ button, input, textarea { font: inherit; color: inherit; }
 
 /* ---------- Hero ---------- */
 .hero { padding-top: 26px; padding-bottom: 30px; text-align: center; }
-.masthead { font-weight: 900; font-size: clamp(2.8rem, 8.6vw, 5.6rem); letter-spacing: -0.03em; line-height: 1; font-variation-settings: "SOFT" 100, "WONK" 0; }
+.masthead { font-family: "Playfair Display", Georgia, serif; font-weight: 900; font-size: clamp(2.8rem, 8.6vw, 5.6rem); letter-spacing: -0.01em; line-height: 1; }
 
 /* ---------- Featured ---------- */
 .featured { padding-top: 14px; padding-bottom: 72px; }
@@ -103,29 +99,9 @@ button, input, textarea { font: inherit; color: inherit; }
 .band { border-top: 1px solid var(--line); }
 main > .band:last-child { border-bottom: 0; }
 
-.newsletter {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--line);
-  max-width: 1072px;
-  padding-left: 18px;
-  padding-right: 18px;
-}
-.nl-form { display: grid; gap: 14px; }
-.nl-form .pill { justify-self: end; padding-left: 28px; padding-right: 28px; }
-.field { display: grid; gap: 2px; font-size: 0.7rem; }
-.field input, .field textarea { width: 100%; padding: 6px 8px; border: 1px solid var(--line); border-radius: 0; background: #fff; font-size: 0.9rem; }
-.nl-form .field input { padding: 6px 0; border: 0; border-bottom: 1px solid var(--line); }
-.field textarea { resize: vertical; min-height: 64px; }
-.check { display: flex; align-items: center; gap: 8px; font-size: 0.7rem; }
-.check input { width: 13px; height: 13px; margin: 0; accent-color: var(--accent); }
 
 /* ---------- Cards ---------- */
-.latest { padding-top: 36px; padding-bottom: 40px; }
+.latest { max-width: 1072px; padding: 36px 18px 40px; }
 .latest .section-title { margin-bottom: 30px; }
 .latest .pill { margin-top: 26px; }
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -171,32 +147,6 @@ main > .band:last-child { border-bottom: 0; }
 .pick-image { display: block; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--line); }
 .pick-image img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ---------- Contact ---------- */
-.contact {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  max-width: 1072px;
-  background:
-    radial-gradient(ellipse 30% 22% at 12% 30%, rgb(255 255 255 / .85), transparent 70%),
-    radial-gradient(ellipse 26% 18% at 20% 70%, rgb(255 255 255 / .75), transparent 70%),
-    radial-gradient(ellipse 34% 20% at 82% 22%, rgb(255 255 255 / .8), transparent 70%),
-    radial-gradient(ellipse 28% 22% at 88% 78%, rgb(255 255 255 / .7), transparent 70%),
-    radial-gradient(ellipse 40% 26% at 50% 100%, rgb(255 255 255 / .6), transparent 70%),
-    linear-gradient(180deg, #b9cfe0 0%, #d4e2ec 60%, #e6eef3 100%);
-}
-.contact .section-title { margin-bottom: 30px; font-weight: 400; }
-.contact-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px 10px;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 16px 18px;
-  border: 1px solid var(--line);
-  background: #fff;
-}
-.contact-form .wide { grid-column: 1 / -1; }
-.contact-form .pill { grid-column: 2; justify-self: end; width: 140px; }
 
 /* ---------- Blog page ---------- */
 .blog { padding-top: 48px; padding-bottom: 64px; max-width: 900px; }
@@ -249,14 +199,13 @@ main > .band:last-child { border-bottom: 0; }
 .site-footer { border-top: 1px solid var(--line); }
 .footer-grid {
   display: grid;
-  grid-template-columns: 140px 1fr 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr auto 1fr;
   gap: 24px;
   align-items: start;
   padding-top: 22px;
   padding-bottom: 32px;
   font-size: 0.75rem;
 }
-.site-footer .logo-mark { font-size: 1.9rem; }
 .footer-links { margin: 0; padding: 0; list-style: none; line-height: 1.75; }
 .footer-links a { text-decoration: none; }
 .footer-links a:hover { text-decoration: underline; color: var(--accent); }
@@ -266,24 +215,20 @@ main > .band:last-child { border-bottom: 0; }
 @media (max-width: 860px) {
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid .logo { grid-column: 1 / -1; }
   .copyright { text-align: left; }
 }
 @media (max-width: 720px) {
-  .header-bar { grid-template-columns: auto 1fr; }
+  .header-bar { grid-template-columns: 1fr; }
   .header-bar .spacer, .header-bar .social-cell { display: none; }
-  .header-bar .logo { padding: 0 14px; }
-  .nav { justify-content: flex-end; }
+  .nav { justify-content: center; }
+  .nav .cell:first-child { border-left: 0; }
   .nav .cell { padding: 0 10px; }
-  .newsletter, .about, .pick { grid-template-columns: 1fr; gap: 24px; }
+  .about, .pick { grid-template-columns: 1fr; gap: 24px; }
   .about-photo { max-width: 160px; }
-  .contact-form { grid-template-columns: 1fr; }
-  .contact-form .pill { grid-column: 1; }
 }
 @media (max-width: 520px) {
   .wrap { padding-left: 16px; padding-right: 16px; }
   .header-bar { padding: 0; }
-  .header-bar .logo { padding: 0 10px; }
   .nav .cell { padding: 0 7px; font-size: 0.74rem; }
   .cards { grid-template-columns: 1fr; }
   .featured { padding-bottom: 48px; }

@@ -31,12 +31,6 @@ content:
     path: _data/home.yml
     format: yaml
     fields:
-      - name: newsletter
-        label: Newsletter
-        type: object
-        fields:
-          - { name: title, label: Title, type: string }
-          - { name: text, label: Text, type: text }
       - { name: latest_title, label: Latest posts title, type: string }
       - name: about
         label: About me
@@ -53,9 +47,3 @@ content:
           - { name: text, label: Text, type: text }
           - { name: image, label: Image, type: image }
           - { name: link, label: Link, type: string }
-      - name: contact
-        label: Contact
-        type: object
-        fields:
-          - { name: title, label: Title line 1, type: string }
-          - { name: subtitle, label: Title line 2, type: string }
