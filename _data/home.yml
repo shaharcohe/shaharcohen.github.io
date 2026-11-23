@@ -1,0 +1,22 @@
+# Text for the sections on the home page. Edit freely.
+newsletter:
+  title: Never miss a new post.
+  text: Get an email when something new goes up. Thoughtful writing and fresh ideas, straight to your inbox.
+
+latest_title: Latest Thoughts
+
+about:
+  label: About me
+  text: Hi, I'm Shahar. This is where I write about the things I care about and share photos from along the way. Replace this with a few sentences about yourself.
+
+# "Pick of the month" appears once you set an image.
+pick:
+  title: My pick of the month
+  subtitle: ""
+  text: ""
+  image: ""
+  link: ""
+
+contact:
+  title: Drop me a line,
+  subtitle: let me know what you think

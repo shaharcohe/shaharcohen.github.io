@@ -4,6 +4,19 @@ description: My blog
 tagline: Notes, stories and photos.
 lang: en
 
+# Optional: a photo of you, e.g. /assets/images/me.jpg (used in "About me" and on posts)
+author_image:
+
+# Optional: a free Formspree form ID (formspree.io) to make the subscribe and contact forms work
+formspree_id:
+
+# Optional: links to your profiles. Leave empty to hide an icon.
+social:
+  instagram:
+  x:
+  facebook:
+  pinterest:
+
 permalink: /:year/:month/:day/:title/
 
 plugins:
