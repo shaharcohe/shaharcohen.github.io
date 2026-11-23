@@ -15,6 +15,7 @@ content:
       - { name: date, label: Date, type: date }
       - { name: description, label: Short description, type: text }
       - { name: image, label: Cover image, type: image }
+      - { name: published, label: Published (turn off to hide this post), type: boolean, default: true }
       - { name: featured, label: Featured on home page, type: boolean }
       - { name: tags, label: Tags, type: string, list: true }
       - { name: body, label: Body, type: rich-text }
@@ -31,6 +32,12 @@ content:
     path: _data/home.yml
     format: yaml
     fields:
+      - name: hero
+        label: Main header
+        type: object
+        fields:
+          - { name: kicker, label: Small line above the title, type: string }
+          - { name: title, label: Big title, type: string }
       - { name: latest_title, label: Latest posts title, type: string }
       - name: about
         label: About me
@@ -38,6 +45,15 @@ content:
         fields:
           - { name: label, label: Label, type: string }
           - { name: text, label: Text, type: text }
+      - name: split
+        label: Split design (only used when Design is Split)
+        type: object
+        fields:
+          - { name: headline, label: Big headline, type: string }
+          - { name: ticker, label: Scrolling text, type: string }
+          - { name: button, label: Button text, type: string }
+          - { name: image, label: Right-side photo (default is the featured post photo), type: image }
+          - { name: categories_label, label: Categories label, type: string }
       - name: pick
         label: Pick of the month
         type: object
@@ -47,3 +63,18 @@ content:
           - { name: text, label: Text, type: text }
           - { name: image, label: Image, type: image }
           - { name: link, label: Link, type: string }
+  - name: settings
+    label: Site settings
+    type: file
+    path: _data/settings.yml
+    format: yaml
+    fields:
+      - name: design
+        label: Design
+        type: select
+        options:
+          values:
+            - { value: classic, label: "Classic (bordered, white)" }
+            - { value: split, label: "Split (yellow and blue)" }
+      - { name: site_hidden, label: Hide the whole site (visitors see only the message below), type: boolean }
+      - { name: hidden_message, label: Message shown while the site is hidden, type: string }

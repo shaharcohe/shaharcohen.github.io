@@ -1,0 +1,59 @@
+<section class="wrap hero">
+  <p class="kicker">{{ home.hero.kicker | default: site.tagline }}</p>
+  <h1 class="masthead">{{ home.hero.title | default: site.title }}</h1>
+</section>
+
+{% if featured %}
+<section class="wrap featured">
+  <article class="featured-card">
+    <span class="badge">Featured post</span>
+    <a class="card-media" href="{{ featured.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      {% if featured.image %}<img src="{{ featured.image | relative_url }}" alt="">{% else %}<span class="placeholder">{{ featured.title | slice: 0 }}</span>{% endif %}
+    </a>
+    <div class="card-body">
+      <p class="meta">{{ featured.date | date: "%b %-d" }} &middot; {% include read-time.html content=featured.content %}</p>
+      <h2><a href="{{ featured.url | relative_url }}">{{ featured.title }}</a></h2>
+      <p class="excerpt">{{ featured.description | default: featured.excerpt | strip_html | truncatewords: 60 }}</p>
+    </div>
+  </article>
+</section>
+{% endif %}
+
+
+{% assign latest = site.posts | where_exp: "p", "p.url != featured.url" %}
+{% if latest.size > 0 %}
+<section class="wrap band latest">
+  <h2 class="section-title center">{{ home.latest_title }}</h2>
+  <div class="cards">
+    {% for post in latest limit: 3 %}{% include post-card.html %}{% endfor %}
+  </div>
+  <p class="center"><a class="pill" href="{{ '/blog/' | relative_url }}">All Posts</a></p>
+</section>
+{% endif %}
+
+<section class="wrap band about">
+  <div class="about-photo">
+    {% if site.author_image %}<img src="{{ site.author_image | relative_url }}" alt="{{ site.author }}">{% else %}<span class="placeholder">{{ site.author | slice: 0 }}</span>{% endif %}
+  </div>
+  <div>
+    <p class="label">{{ home.about.label }}</p>
+    <p class="about-text">{{ home.about.text }}</p>
+    <a class="pill" href="{{ '/about/' | relative_url }}">Read More</a>
+  </div>
+</section>
+
+{% if home.pick.image and home.pick.image != "" %}
+<section class="wrap band pick">
+  <div class="pick-text">
+    <div>
+      <h2 class="section-title">{{ home.pick.title }}</h2>
+      {% if home.pick.subtitle and home.pick.subtitle != "" %}<p class="small">{{ home.pick.subtitle }}</p>{% endif %}
+    </div>
+    {% if home.pick.text and home.pick.text != "" %}<p class="small">{{ home.pick.text }}</p>{% endif %}
+  </div>
+  {% if home.pick.link and home.pick.link != "" %}<a class="pick-image" href="{{ home.pick.link }}">{% else %}<div class="pick-image">{% endif %}
+    <img src="{{ home.pick.image | relative_url }}" alt="{{ home.pick.subtitle }}" loading="lazy">
+  {% if home.pick.link and home.pick.link != "" %}</a>{% else %}</div>{% endif %}
+</section>
+{% endif %}
+

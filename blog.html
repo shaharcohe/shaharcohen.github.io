@@ -3,8 +3,7 @@ layout: default
 title: Blog
 permalink: /blog/
 ---
-{% assign all_tags = "" | split: "" %}
-{% for post in site.posts %}{% for tag in post.tags %}{% assign t = tag | downcase %}{% unless all_tags contains t %}{% assign all_tags = all_tags | push: t %}{% endunless %}{% endfor %}{% endfor %}
+{% include tags.html %}
 
 <section class="wrap blog">
   {% if all_tags.size > 0 %}
@@ -32,4 +31,9 @@ permalink: /blog/
       });
     });
   });
+  (function () {
+    var tag = decodeURIComponent(location.hash.slice(1));
+    var btn = tag && document.querySelector('.filters button[data-filter="' + tag.replace(/"/g, '') + '"]');
+    if (btn) btn.click();
+  })();
 </script>

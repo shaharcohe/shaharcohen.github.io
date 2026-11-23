@@ -1,0 +1,57 @@
+{% assign split = home.split %}
+{% assign ticker = split.ticker | default: home.hero.kicker | default: site.tagline %}
+{% assign hero_image = split.image | default: featured.image %}
+{% include tags.html %}
+<section class="split">
+  <div class="split-left">
+    <h1 class="split-headline">{{ split.headline | default: home.hero.title | default: site.title }}</h1>
+
+    <div class="ticker-row">
+      <p class="sr-only">{{ ticker }}</p>
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          {% for i in (1..2) %}<span>{% for j in (1..4) %}{{ ticker }}&nbsp;&nbsp;&bull;&nbsp;&nbsp;{% endfor %}</span>{% endfor %}
+        </div>
+      </div>
+      {% if site.posts.size > 0 %}<a class="black-btn" href="{{ site.posts.first.url | relative_url }}">{{ split.button | default: "Read Latest" }}</a>{% endif %}
+    </div>
+
+    <div class="split-posts">
+      {% for post in site.posts limit: 4 %}
+        <a class="mini-post" href="{{ post.url | relative_url }}">
+          <span class="mini-thumb">{% if post.image %}<img src="{{ post.image | relative_url }}" alt="" loading="lazy">{% else %}<span class="placeholder">{{ post.title | slice: 0 }}</span>{% endif %}</span>
+          <span class="mini-text">
+            <span class="mini-title">{{ post.title }}</span>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
+          </span>
+        </a>
+      {% else %}
+        <p class="small">No posts yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="split-right">
+    {% if featured %}<a class="split-image" href="{{ featured.url | relative_url }}">{% else %}<div class="split-image">{% endif %}
+      {% if hero_image %}<img src="{{ hero_image | relative_url }}" alt="">{% else %}<span class="placeholder">{{ site.title | slice: 0 }}</span>{% endif %}
+    {% if featured %}</a>{% else %}</div>{% endif %}
+    <div class="split-cats">
+      <p class="split-cats-label">{{ split.categories_label | default: "Categories" }}</p>
+      <ul>
+        <li><a href="{{ '/blog/' | relative_url }}">The Latest</a></li>
+        {% for t in all_tags %}<li><a href="{{ '/blog/' | relative_url }}#{{ t | uri_escape }}">{{ t | capitalize }}</a></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap band about">
+  <div class="about-photo">
+    {% if site.author_image %}<img src="{{ site.author_image | relative_url }}" alt="{{ site.author }}">{% else %}<span class="placeholder">{{ site.author | slice: 0 }}</span>{% endif %}
+  </div>
+  <div>
+    <p class="label">{{ home.about.label }}</p>
+    <p class="about-text">{{ home.about.text }}</p>
+    <a class="pill" href="{{ '/about/' | relative_url }}">Read More</a>
+  </div>
+</section>
