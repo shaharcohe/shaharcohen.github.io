@@ -24,7 +24,7 @@ button, input, textarea { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 [hidden] { display: none !important; }
 
-.wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.wrap { width: 100%; max-width: 1360px; margin: 0 auto; padding: 0 24px; }
 .center { text-align: center; }
 .small { margin: 12px 0 0; font-size: 0.82rem; line-height: 1.55; color: var(--text); max-width: 42ch; }
 .kicker { margin: 0 0 6px; text-align: center; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; }
@@ -58,7 +58,7 @@ button, input, textarea { font: inherit; color: inherit; }
   padding: 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  max-width: 1072px;
+  max-width: 1312px;
 }
 .cell { display: flex; align-items: center; justify-content: center; min-height: 34px; border-left: 1px solid var(--line); }
 .header-bar > .cell:first-child { border-left: 0; }
@@ -78,7 +78,7 @@ button, input, textarea { font: inherit; color: inherit; }
 
 /* ---------- Featured ---------- */
 .featured { padding-top: 14px; padding-bottom: 72px; }
-.featured-card { position: relative; max-width: 680px; margin: 0 auto; border: 1px solid #bdbdbd; }
+.featured-card { position: relative; max-width: 920px; margin: 0 auto; border: 1px solid #bdbdbd; }
 .badge {
   position: absolute;
   top: -20px;
@@ -101,7 +101,7 @@ main > .band:last-child { border-bottom: 0; }
 
 
 /* ---------- Cards ---------- */
-.latest { max-width: 1072px; padding: 36px 18px 40px; }
+.latest { max-width: 1312px; padding: 36px 18px 40px; }
 .latest .section-title { margin-bottom: 30px; }
 .latest .pill { margin-top: 26px; }
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -133,23 +133,23 @@ main > .band:last-child { border-bottom: 0; }
   align-items: start;
   padding-top: 40px;
   padding-bottom: 28px;
-  max-width: 1072px;
+  max-width: 1312px;
   padding-left: 18px;
   padding-right: 18px;
 }
 .about-photo { aspect-ratio: 4 / 5; overflow: hidden; border: 1px solid var(--line); }
 .about-photo img { width: 100%; height: 100%; object-fit: cover; }
-.about-text { margin: 0 0 22px; max-width: 30ch; font-family: var(--display); font-size: clamp(1.25rem, 2.4vw, 1.6rem); font-weight: 400; line-height: 1.25; }
+.about-text { margin: 0 0 22px; max-width: 40ch; font-family: var(--display); font-size: clamp(1.25rem, 2.4vw, 1.6rem); font-weight: 400; line-height: 1.25; }
 
 /* ---------- Pick of the month ---------- */
-.pick { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-top: 32px; padding-bottom: 32px; max-width: 1072px; padding-left: 18px; padding-right: 18px; }
+.pick { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-top: 32px; padding-bottom: 32px; max-width: 1312px; padding-left: 18px; padding-right: 18px; }
 .pick-text { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
 .pick-image { display: block; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--line); }
 .pick-image img { width: 100%; height: 100%; object-fit: cover; }
 
 
 /* ---------- Blog page ---------- */
-.blog { padding-top: 48px; padding-bottom: 64px; max-width: 900px; }
+.blog { padding-top: 48px; padding-bottom: 64px; max-width: 1200px; }
 .filters { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-bottom: 24px; }
 .filters button { padding: 2px 0; border: 0; background: none; font-size: 0.72rem; cursor: pointer; color: var(--text); }
 .filters button:hover { text-decoration: underline; }
@@ -158,7 +158,7 @@ main > .band:last-child { border-bottom: 0; }
 .blog .card h3 { font-size: 0.98rem; }
 
 /* ---------- Post & page ---------- */
-.post { max-width: 760px; padding-top: 56px; padding-bottom: 72px; }
+.post { max-width: 880px; padding-top: 56px; padding-bottom: 72px; }
 .post-header { margin-bottom: 28px; }
 .post-header .byline { margin-bottom: 18px; }
 .post-header h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 900; letter-spacing: -0.02em; }
